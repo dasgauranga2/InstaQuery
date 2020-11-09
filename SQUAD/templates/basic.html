@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Forms</title>
+    </head>
+
+    <body>
+
+        <p>
+            <!-- if breed is entered -->
+            {% if result %}
+                Answer : {{ result }}
+            {% else %}
+                Please enter the context and query
+            {% endif %}
+        </p>
+
+        <!-- create the form -->
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.context.label }} {{ form.context() }}
+            <br><br>
+            {{ form.query.label }} {{ form.query() }}
+            <br><br>
+            {{ form.submit }}
+        </form>
+
+    </body>
+
+</html>
